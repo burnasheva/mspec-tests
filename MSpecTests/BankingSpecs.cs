@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace MSpecTests
 {
     [Subject(typeof(Account), "Funds transfer")]
+    [Tags("failure")]
     public class when_transferring_between_two_accounts
       : AccountSpecs
     {
@@ -24,11 +25,11 @@ namespace MSpecTests
           () => fromAccount.Balance.ShouldEqual(0m);
 
         It should_credit_the_to_account_by_the_amount_transferred =
-          () => toAccount.Balance.ShouldEqual(2m);
+          () => toAccount.Balance.ShouldEqual(3m); // 2m is correct
     }
 
     [Subject(typeof(Account), "Funds transfer")]
-    [Tags("failure")]
+    [Tags("green")]
     public class when_transferring_an_amount_larger_than_the_balance_of_the_from_account
       : AccountSpecs
     {

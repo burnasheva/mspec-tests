@@ -23,8 +23,6 @@ namespace MSpecTests
                 throw new Exception(String.Format("Cannot transfer ${0}. The available balance is ${1}.", amount, _balance));
             }
 
-            Task.Delay(3000).Wait();
-
             _balance -= amount;
             toAccount.Balance += amount;
         }
