@@ -25,7 +25,7 @@ namespace MSpecTests
           () => fromAccount.Balance.ShouldEqual(0m);
 
         It should_credit_the_to_account_by_the_amount_transferred =
-          () => toAccount.Balance.ShouldEqual(3m); // 2m is correct
+          () => toAccount.Balance.ShouldEqual(2m); // 2m is correct
     }
 
     [Subject(typeof(Account), "Funds transfer")]
